@@ -1,0 +1,50 @@
+<!DOCTYPE html> 
+<html>
+
+<head>
+    <title>Menu desplegable</title>
+    <link rel="stylesheet" href="C:\Users\Maloca2\Desktop\semana2\reto2\styles1.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+    $('.menujq > ul > li:has(ul)').addClass('desplegable');
+    $('.menujq > ul > li > a').click(function() {
+    var comprobar = $(this).next();
+    $('.menujq li').removeClass('activa');
+    $(this).closest('li').addClass('activa');
+    if((comprobar.is('ul')) && (comprobar.is(':visible'))) {
+    $(this).closest('li').removeClass('activa');
+    comprobar.slideUp('normal');
+    }
+    if((comprobar.is('ul')) && (!comprobar.is(':visible'))) {
+    $('.menujq ul ul:visible').slideUp('normal');
+    comprobar.slideDown('normal');
+    }
+    });
+    });
+    </script>
+</head>
+
+<body>
+<h2>MENU ACORDEON USANDO jQUERY</h2>    	
+<div class="menujq">
+<ul>
+ <li><a href="javascript:void();">INICIO</a>
+  <ul>
+   <li><a href="URL del enlace">Opc. 1.1</a></li>
+   <li><a href="URL del enlace">Opc. 1.2</a></li>
+  </ul>
+ </li>
+ <li><a href="javascript:void();">SERVICIOS</a>
+  <ul>
+   <li><a href="URL del enlace">Opc. 2.1</a></li>
+   <li><a href="URL del enlace">Opc. 2.2</a></li>
+   <li><a href="URL del enlace">Opc. 2.3</a></li>
+  </ul>
+ </li>
+ <li><a href="URL del enlace">ACERCA DE NOSOTROS</a></li>
+</ul>
+</div>
+</body>
+
+</html>

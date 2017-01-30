@@ -1,0 +1,56 @@
+*
+.menujq ul {
+list-style: none;
+width: 30%;
+margin: 50px ;
+padding: 0;
+
+}
+
+h2 {
+	text-align: center;
+	color: #E77E23;
+}
+.menujq a {
+display: block;
+padding: 10px;
+border-bottom: 1px solid #fff;
+background: #D25400;
+color: #fff;
+text-decoration: none;
+font-size: 16px;
+line-height: 16px;
+text-transform: uppercase;
+}
+
+.menujq ul li a:before {
+content: "\25CF\00A0 ";
+width: 28px;
+display: inline-block;
+vertical-align: top;
+}
+
+.menujq ul li.desplegable a:before {
+content: "\25BA\00A0";
+}
+
+.menujq ul li.desplegable.activa a:before {
+content: "\25BC\00A0 ";
+}
+
+.menujq ul li.desplegable ul li a:before,
+.menujq ul li.desplegable.activa ul li a:before {
+content: "";
+}
+
+.menujq ul ul {
+display: none;
+width: 100%;
+}
+
+.menujq ul ul a {
+padding-left: 20px;
+background: #E77E23;
+text-transform: capitalize;
+}
+
